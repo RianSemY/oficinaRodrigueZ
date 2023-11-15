@@ -1,0 +1,276 @@
+/*------------------------------------------------------------------ BODY E HEADER -----------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+
+}
+body, .container{
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+}
+header{
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    place-items: center;
+    z-index: 1;
+    background: #27282c;
+    position: fixed;
+    flex-direction: column;
+}
+.header-not-fixed{
+    width: 100%;
+    height: 200px;
+}
+
+/*------------------------------------------------------------------ NAV BAR -----------------------------------------------------------------*/
+
+.fazerLogin{
+    position: absolute;
+    color: black;
+    width: 140px;
+    padding: 10px;
+    font-size: 16px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    color: rgb(30,155,255);
+    text-shadow: 0px 0px 24px rgba(30,155,255,0.9);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    transition: 0.7s;
+    transition-delay: 0.1s;
+    right: 0;
+    margin-right: 30px;
+    margin-bottom: 100px;
+}
+.fazerLogin:hover{
+    background-color: rgb(30,155,255);
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF;
+    border: 2px solid rgba(0, 0, 0, 0); 
+    color: white;
+    box-shadow: 0 0 10px rgba(30,155,255,0.87),
+    0 0 30px rgba(30,155,255,0.87),
+    0 0 60px rgba(30,155,255,0.87);
+}
+.nav-bar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    place-items: center;
+    
+}
+.nav-item{
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+    transition-delay: 0.1s;
+    letter-spacing: 3px;
+}
+.nav-item:hover{
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF, 0 0 55px #FFF, 0 0 75px #FFF;
+}
+.theme-checkbox {
+    --toggle-size: 16px;  
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+    width: 50px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    margin-top: 40px;
+    margin-right: 200px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: absolute;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+}
+.theme-checkbox::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 3.5px;
+    left: 4px;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+
+    transition: 0.4s;
+}
+.theme-checkbox:checked::before {
+    left: 27px;
+    background-position: 0;
+}
+.theme-checkbox:checked {
+    background-position: 100%;
+}
+/*------------------------------------------------------------------ MODAL LOGIN -----------------------------------------------------------------*/
+
+.login-container{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    align-items: end;
+    justify-content: center;
+    display: flex;
+}
+#login {
+    height: 0px;
+    z-index: 2;
+    width: 500px;
+    background-color: white;
+    transition: height 1s;
+    padding: 50px 50px 0px;
+    flex-direction: column;
+    display: none;
+}
+.logoLogin{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+}
+.logoLogin img{
+    width: 100%;
+}
+.closeModal-container{
+    width: 100%;
+    text-align: right;
+}
+#closeModalBtn{
+    font-size: 30px;
+    color: darkgray;
+}
+#closeModalBtn:hover{
+    cursor: pointer;
+    color: rgb(107, 107, 107);
+}
+.iconeInput{
+    position: absolute;
+    margin-top: 26px;
+    margin-left: 2px;
+}
+#loginBtn{
+    padding: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#loginBtn:hover{
+    background-color: rgb(172, 0, 0);
+}
+#loginBtn:active{
+    background-color: black;
+}
+#verSenha{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 370px;
+    cursor: pointer;
+    display: flex;
+    z-index: 2;
+}
+.material-symbols-outlined::selection,
+#loginBtn::selection{
+    background-color: transparent;
+}
+#login input[type="text"], 
+#login input[type="password"]{
+    width: 100%;
+    height: 40px;
+    padding-left: 32px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    margin-bottom: 50px;
+}
+#login input[type="text"]:focus, 
+#login input[type="password"]:focus{
+    border-bottom: 3px solid red;
+}
+
+/*------------------------------------------------------------------ MAIN-CATÁLOGO -----------------------------------------------------------------*/
+
+.pecas-container{
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 250px;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.pecas-container:hover{    
+    box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
+    -webkit-box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
+    -moz-box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
+}
+.name-peca{
+    margin: 10px;
+}
+.img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.image-peca{
+    width: 200px;
+    position: relative;
+}
+.desc-peca{
+    text-align: justify;
+}
+.logo{
+    justify-content: center;
+    height: 150px;
+}
+
+
+
+
+
+/*------------------------------------------------------------------ CELULAR -----------------------------------------------------------------*/
+@media screen and (max-width: 980px) {
+    .pecas-container {
+        width: 400px; 
+        height: 470px; 
+    }
+    .pecas-container img{
+        width: 380px; 
+        height: 320px; 
+    }
+    #login{ width: 100%; }
+    .login-container{ margin-top: 280px;}
+    #verSenha{ margin-left: 780px;}
+
+    .login-container{
+        margin: 0;
+    }
+}
