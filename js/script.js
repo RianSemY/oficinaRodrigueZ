@@ -45,25 +45,29 @@ let header = document.querySelector('.header');
 let loginContainer = document.getElementById('login');
 let inputText = document.querySelectorAll("#password, #email");
 let botaoLogin = document.querySelector(".fazerLogin");
-
-
+let pecasContainer = document.querySelectorAll(".pecas-container");
+let navBar = document.querySelector(".nav-bar");
 
 DarkMode.addEventListener('change', function() {
     if (DarkMode.checked) {
-            header.style.backgroundColor = "#000000";
+            header.style.backgroundColor = "#010409";
+            navBar.style.borderBottom = "3px solid #22252c";
+            navBar.style.borderTop = "3px solid #22252c";
             loginContainer.style.backgroundColor = "#000000";
-            document.body.style.backgroundColor = "#212121"
+            document.body.style.backgroundColor = "#161b22";
+            
+            
             for (let i = 0; i < text.length; i++) {
-                text[i].style.color = "#FFFFFF";
+                text[i].style.color = "#E6EDF3";
             }
             for(let i = 0; i<inputText.length; i++){
-                inputText[i].style.backgroundColor = "#000000";
-                inputText[i].style.color = "#FFFFFF";
+                inputText[i].style.color = "#E6EDF3";
             }
         } else{
             header.style.backgroundColor = "#27282C";
             loginContainer.style.backgroundColor = "#FFFFFF";
             document.body.style.backgroundColor = "#FFFFFF"
+            navBar.style.border = "none";
             
             for (let i = 0; i < text.length; i++) {
                 text[i].style.color = "#000000";
