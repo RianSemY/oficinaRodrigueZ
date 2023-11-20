@@ -61,6 +61,7 @@ DarkMode.addEventListener('change', function() {
                 text[i].style.color = "#E6EDF3";
             }
             for(let i = 0; i<inputText.length; i++){
+                
                 inputText[i].style.color = "#E6EDF3";
             }
         } else{

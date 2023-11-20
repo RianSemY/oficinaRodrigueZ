@@ -37,190 +37,31 @@
             <input type="checkbox" class="theme-checkbox">
             <button class="fazerLogin" onclick="abrirModal()">FAZER LOGIN</button>
             <div class="nav-bar">
+                <a href="./index.php" class="nav-item">PÁGINA INICIAL</a>
                 <a href="#" class="nav-item">PORTIFÓLIOS</a>
-                <a href="#" class="nav-item">SERVIÇOS</a>
+                <a href="./servicos.php" class="nav-item">SERVIÇOS</a>
                 <a href="#" class="nav-item">FALE COM NÓS</a>
                 <a href="#" class="nav-item">ABOUT US</a>
             </div>
         </header>
         
         <div class="header-not-fixed"></div>
-            <main>
 
             <div class="container">
             <?php
+            for($i = 0; $i < 20 ; $i++){
                 echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
+                    echo '<div class="img-container">';
+                        echo '<img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
+                    echo '</div>';
+                    echo '<h2 class="name-peca">Kit Completo Uno</h2>';
+                    echo '<h3 class="preco-peca">De R$ 399,90<p>por R$ 199,90</h2>';
+                    echo '<p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
                 echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
-                echo '<div class="pecas-container">';
-                    echo '    <div class="img-container">';
-                        echo '        <img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
-                    echo '    </div>';
-                    echo '    <h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '    <p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
-                echo '</div>';
+            }
                 
             ?>
             </div>
-        </main>
         <script src="./js/script.js"></script>
     </body>
 </html>

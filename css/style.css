@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Oxanium', cursive;
-
+    outline: none;
 }
 body, .container{
     min-height: 100vh;
@@ -208,6 +208,7 @@ header{
     border: none;
     border-bottom: 2px solid gray;
     margin-bottom: 50px;
+    background-color: transparent;
 }
 #login input[type="text"]:focus, 
 #login input[type="password"]:focus{
@@ -217,7 +218,7 @@ header{
 /*------------------------------------------------------------------ MAIN-CATÁLOGO -----------------------------------------------------------------*/
 
 .pecas-container{
-    height: 370px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
