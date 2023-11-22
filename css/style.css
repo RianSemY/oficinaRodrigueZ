@@ -14,6 +14,7 @@ body, .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center ;
+    z-index: 0;
 }
 header{
     width: 100%;
@@ -53,7 +54,6 @@ header{
 }
 .fazerLogin:hover{
     background-color: rgb(30,155,255);
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF;
     border: 2px solid rgba(0, 0, 0, 0); 
     color: white;
     box-shadow: 0 0 10px rgba(30,155,255,0.87),
@@ -79,50 +79,7 @@ header{
 .nav-item:hover{
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF, 0 0 55px #FFF, 0 0 75px #FFF;
 }
-.theme-checkbox {
-    --toggle-size: 16px;  
-    -webkit-appearance: none;
-        -moz-appearance: none;
-            appearance: none;
-    width: 50px;
-    height: 25px;
-    top: 0;
-    right: 0;
-    margin-top: 40px;
-    margin-right: 200px;
-    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
-    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
-    background-size: 205%;
-    background-position: 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 99em;
-    position: absolute;
-    cursor: pointer;
-    font-size: var(--toggle-size);
-}
-.theme-checkbox::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    top: 3.5px;
-    left: 4px;
-    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
-    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
-    background-size: 205%;
-    background-position: 100%;
-    border-radius: 50%;
 
-    transition: 0.4s;
-}
-.theme-checkbox:checked::before {
-    left: 27px;
-    background-position: 0;
-}
-.theme-checkbox:checked {
-    background-position: 100%;
-}
 /*------------------------------------------------------------------ MODAL LOGIN -----------------------------------------------------------------*/
 
 .login-container{
@@ -132,6 +89,7 @@ header{
     align-items: end;
     justify-content: center;
     display: flex;
+    z-index: -1;
 }
 #login {
     height: 0px;
@@ -236,6 +194,11 @@ header{
 .name-peca{
     margin: 10px;
 }
+.preco-peca{
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
 .img-container{
     width: 100%;
     display: flex;
@@ -254,7 +217,32 @@ header{
 }
 
 
+/*--------------------------------------------- Portifólios --------------------------------------------------------*/
 
+.container-port{
+    width: 700px;
+    text-align: center;
+    margin-top: 100px;
+    height: 70vh;
+    border-radius: 5px;
+    transition: .2s;
+    flex-direction: column;
+    margin: 50px 20px 20px;
+}
+.container-port h1{
+    margin-top: 20px;
+}
+.container-port:hover{
+    box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
+}
+.container-port p{
+    margin: 20px 50px 50px;
+    font-size: 18px;
+}
+
+.container-port img{
+    width: 100%;
+}
 
 
 /*------------------------------------------------------------------ CELULAR -----------------------------------------------------------------*/
@@ -275,3 +263,4 @@ header{
         margin: 0;
     }
 }
+
