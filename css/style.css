@@ -43,29 +43,27 @@ header{
     height: 60px;
     cursor: pointer;
     background: transparent;
-    color: rgb(30,155,255);
-    text-shadow: 0px 0px 24px rgba(30,155,255,0.9);
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    color: rgb(230, 42, 42);
+    text-shadow: 0px 0px 24px rgba(230, 42, 42,0.9);
     transition: 0.7s;
     transition-delay: 0.1s;
     right: 0;
+    border: none;
     margin-right: 30px;
     margin-bottom: 100px;
 }
 .fazerLogin:hover{
-    background-color: rgb(30,155,255);
-    border: 2px solid rgba(0, 0, 0, 0); 
+    background-color: rgb(230, 42, 42);
     color: white;
-    box-shadow: 0 0 10px rgba(30,155,255,0.87),
-    0 0 30px rgba(30,155,255,0.87),
-    0 0 60px rgba(30,155,255,0.87);
+    box-shadow: 0 0 10px rgba(230, 42, 42,0.87),
+    0 0 30px rgba(230, 42, 42,0.87),
+    0 0 60px rgba(230, 42, 42,0.87);
 }
 .nav-bar{
     width: 100%;
     height: 50px;
     display: flex;
     place-items: center;
-    
 }
 .nav-item{
     text-decoration: none;
@@ -73,6 +71,7 @@ header{
     margin-left: auto;
     margin-right: auto;
     transition: 0.3s;
+    font-size: 20px;
     transition-delay: 0.1s;
     letter-spacing: 3px;
 }
@@ -123,9 +122,12 @@ header{
     color: rgb(107, 107, 107);
 }
 .iconeInput{
+    margin-top: 65px;
     position: absolute;
-    margin-top: 26px;
-    margin-left: 2px;
+}
+label{
+    margin-top: 35px;
+    position: absolute;
 }
 #loginBtn{
     padding: 10px;
@@ -165,12 +167,24 @@ header{
     outline: none;
     border: none;
     border-bottom: 2px solid gray;
-    margin-bottom: 50px;
+    margin-top: 60px;
     background-color: transparent;
 }
 #login input[type="text"]:focus, 
 #login input[type="password"]:focus{
     border-bottom: 3px solid red;
+}
+.criarConta{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.criarConta a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;;
+}
+.criarConta a:hover{
+    color: red;
 }
 
 /*------------------------------------------------------------------ MAIN-CATÁLOGO -----------------------------------------------------------------*/
@@ -220,10 +234,10 @@ header{
 /*--------------------------------------------- Portifólios --------------------------------------------------------*/
 
 .container-port{
-    width: 70vh;
+    width: 700px;
+    height: 1000px;
     text-align: center;
     margin-top: 100px;
-    height: 70vh;
     border-radius: 5px;
     transition: .2s;
     flex-direction: column;
@@ -231,17 +245,21 @@ header{
 }
 .container-port h1{
     margin-top: 20px;
+    font-size: 2rem;
 }
 .container-port:hover{
     box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
 }
 .container-port p{
     margin: 20px 50px 50px;
-    font-size: 18px;
+    font-size: 1.5rem;
+    text-align: justify;
+    text-align-last: center;
 }
 
 .container-port img{
-    width: 100%;
+    width: 700px;
+    height: 500px;
 }
 
 
@@ -262,5 +280,14 @@ header{
     .login-container{
         margin: 0;
     }
+    header{
+        position: absolute;
+    }
+    .container-port{
+        box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    
 }
 
