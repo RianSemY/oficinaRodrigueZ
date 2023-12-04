@@ -13,9 +13,11 @@ if ($_POST) {
         $carro->setPlaca($placa);
         $carro->setModelo($modelo); 
         $carro->setAno($ano);
-        $carro->setMarca($ano);
+        $carro->setCor($cor);
         $carro->setMarca($marca);
-        
+        session_start();
+        $carro->setIdcliente($_SESSION["login"]);
+
         $carro->insert();
         header('location:../registrarCarro.php?cod=170');
     } else{

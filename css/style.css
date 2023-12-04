@@ -211,7 +211,7 @@ label{
     width: 250px;
     height: 420px;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     transition: box-shadow 0.3s ease-in-out;
 }
 .shadow-box:hover{

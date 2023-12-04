@@ -96,7 +96,6 @@ class carrosModel {
                 $this->ano = $value['Ano'];
                 $this->marca = $value['marca'];
                 $this->placa = $value['placa'];
-                $this->placa = $value['placa'];
                 $this->idcliente = $value['idcliente'];
                 
                 require_once './contasModel.php';
@@ -111,7 +110,8 @@ class carrosModel {
     public function insert(){
         $db = new ConexaoMysql();
         $db->Conectar();
-        $sql = 'INSERT INTO carro (placa,modelo,marca,ano,cor,idcliente) values("'.$this->placa.'","'.$this->modelo.'","'.$this->marca.'","'.$this->ano.'","'.$this->cor.'","'.$this->idcliente.'",);';
+  
+        $sql = 'INSERT INTO carro values(null, "'.$this->idcliente.'", "'.$this->placa.'","'.$this->modelo.'","'.$this->marca.'","'.$this->ano.'","'.$this->cor.'");';
 
         $db->Executar($sql);
         $db->Desconectar();

@@ -1,4 +1,4 @@
-<?php
+    <?php
 require './shared/header.php';
 ?>
 
@@ -28,6 +28,7 @@ require './shared/header.php';
                 <span id="Icor" class="material-symbols-outlined regCarIcon">brush</span>
                 <label for="cor">Cor:</label>
                 <input id="cor" name="cor" type="text" placeholder="Insira a cor do seu carro">
+                
             </div>
             <div class="submitCar">
                 <input type="submit" value="Enviar carro">
