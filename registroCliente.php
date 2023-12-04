@@ -38,18 +38,8 @@
             font-size: 15px;
             margin-bottom: 20px;
         }
-        input[type="text"]{
-            border-bottom: solid gray 3px; 
-            transition: .3s;
-        }
-        input[type="text"]:focus{
+        body div input:focus{
             border-bottom: solid red 3px; 
-        }
-        input[type="file"]{
-            cursor: pointer;
-
-            
-            margin-top: 32px;
         }
         body div input[type="submit"]{
             background-color: red;
@@ -94,49 +84,60 @@
             display: flex;
             justify-content: center;
         }
-        
+        .eye{
+            position: absolute;
+            margin-top: 15px;
+            margin-left: 525px;
+            cursor: pointer;
+            display: flex;
+        }
     </style>
 </head>
-
-<?php
-if(isset($_FILES['upload'])){
-    $arquivo = $_FILES['upload'];
-    if($arquivo['error']){
-        die('Falha ao enviar!');
-    }
-    $pasta = "img/portifolios/";
-    $nomeArquivo = $arquivo['name'];
-
-    $tipo = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION));
-
-    if($tipo != "jpg" && $tipo != "jpeg" && $tipo != "png"){
-        die("Tipo de arquivo não é aceito");
-    }
-
-    
-    $caminhoImagem = $pasta . $nomeArquivo . "." . $tipo;
-    $imagemEnviada = move_uploaded_file($arquivo["tmp_name"], $caminhoImagem);
-}
-?>
 <body>
     <div class="darkBG">
         <div class="containerReg">
-            <p>Inserir  portifólio: </p>
-            <form method="post" action="controller/portifoliosController.php">
-                <span class="material-symbols-outlined">directions_car</span>
-                <labeL for="nome">Insira o nome do portifólio: </label>
-                <input type="text" name="nome" id="nome">
-                
-                <span class="material-symbols-outlined">description</span>
-                <labeL for="nome">Insira a descrição do portifólio: </label>
-                <input type="text" name="descricao" id="desc">
+            <p>Registrar: </p>
+            <form method="post" action="controller/contasController.php">
+                <span class="material-symbols-outlined">person</span>
+                <label for="nome">Nome:</label>
+                <input id="nome" name="nome" type="text" required placeholder="Insira seu nome de usuário"/>
 
-                <span class="material-symbols-outlined">upload_file</span>
-                <input type="file" name="upload">
+                <span class="material-symbols-outlined">mail</span>
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" required placeholder="Insira seu email"/>
+
+                <span class="material-symbols-outlined">lock</span>
+                <label for="password">Password:</label>
+                <span class="material-symbols-outlined eye" onclick="verSenha();">visibility_off</span>
+                <input id="password" name="password" type="password" required placeholder="Insira uma senha"/>
+
+                <span class="material-symbols-outlined">home</span>
+                <label for="endereco">Endereco:</label>
+                <input id="endereco" name="endereco" type="text" required placeholder="Insira seu endereço"/>
+
+                <span class="material-symbols-outlined">call</span>
+                <label for="fone">Telefone:</label>
+                <input id="fone" name="fone" type="text"  required placeholder="Insira seu numero de telefone"/>
 
                 <input type="submit" value="Enviar">
             </form>
         </div>
     </div>
+    <script>
+        function verSenha(){
+        let visibleOrNot = document.querySelector('.eye');
+        let inputSenha = document.getElementById('password');
+
+        if(visibleOrNot.innerHTML.trim().toLowerCase() === "visibility_off"){
+            visibleOrNot.innerHTML = "visibility";            
+            inputSenha.type = 'text';
+        }
+        else if(visibleOrNot.innerHTML.trim().toLowerCase() === "visibility"){
+            visibleOrNot.innerHTML = "visibility_off";            
+            inputSenha.type = 'password';
+        }
+    }
+
+    </script>
 </body>
 </html>

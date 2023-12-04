@@ -35,7 +35,7 @@
                     <span class="material-symbols-outlined" onclick="verSenha()" id="verSenha">visibility_off</span>
                     <input type="password" id="password" name="senha" placeholder="Insira sua senha">
 
-                    <p class="criarConta">Não tem uma conta?<a href="registro.php"> Crie uma!</a></p>
+                    <p class="criarConta">Não tem uma conta?<a href="registroCliente.php"> Crie uma!</a></p>
                     <input type="submit" id="loginBtn" value="Confirmar" name="submit">
 
                     <?php
@@ -47,7 +47,7 @@
                             echo ('</div>');
                             echo('<script>abrirModal();</script>');
                         } else if ($cod == '172') {
-                            echo ('<br><div class="alert alert-warning">');
+                            echo ('<br><div class="sessaoExpirada">');
                             echo ('Sua sessão expirou. Realize o login novamente.');
                             echo ('</div>');
                             echo('<script>abrirModal();</script>');
@@ -69,11 +69,15 @@
 
             <button class="fazerLogin" onclick="abrirModal()">ENTRAR</button>
             <div class="nav-bar">
-                <a href="./index.php" class="nav-item">PÁGINA INICIAL</a>
-                <a href="./portifolios.php" class="nav-item">PORTIFÓLIOS</a>
-                <a href="./servicos.php" class="nav-item">SERVIÇOS</a>
+                <a href="./index.php?cod=<?php echo $cod?>" class="nav-item">PÁGINA INICIAL</a>
+                <a href="./portifolios.php?cod=<?php echo $cod?>" class="nav-item">PORTIFÓLIOS</a>
+                <a href="./servicos.php?cod=<?php echo $cod?>" class="nav-item">SERVIÇOS</a>
+                <?php
+                if ($cod == '170')
+                    echo "<a href='./registrarCarro.php?cod=$cod' class='nav-item'>MEU CARRO</a>";
+                ?>
                 <a href="#" class="nav-item">FALE CONOSCO</a>
                 <a href="#" class="nav-item">ABOUT US</a>
             </div>
         </header>
-        <div class="header-not-fixed"></div>
+        <div class="header-not-absolute"></div>

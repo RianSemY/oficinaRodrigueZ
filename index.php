@@ -3,15 +3,18 @@ require './shared/header.php';
 ?>
 
             <div class="container">
-            <?php
-            for($i = 0; $i < 20 ; $i++){
+            <?php   
+            require_once './controller/pecasController.php';
+            $pecasList = loadAll();
+            foreach ($pecasList as $peca){
                 echo '<div class="pecas-container">';
+                echo '<div class="shadow-box"></div>';
                     echo '<div class="img-container">';
-                        echo '<img class="image-peca" src="img/bk/bk-Uno.jpg" alt="bodykit-uno"/>';
+                        echo '<img class="image-peca" src="'.$peca['imagem'].'" alt="'.$peca['nome'].'"/>';
                     echo '</div>';
-                    echo '<h2 class="name-peca">Kit Completo Uno</h2>';
-                    echo '<h3 class="preco-peca">R$ 199,90</h2>';
-                    echo '<p class="desc-peca">Um kit essencial para pessoas que têm um uninho simples na garagem e quer turbiná-lo como toda a velocidade da Oficina RodrigueZ</p>';
+                    echo '<h2 class="name-peca">'.$peca['nome'].'</h2>';
+                    echo '<h3 class="preco-peca">R$'.$peca['preco'].'</h2>';
+                    echo '<p class="desc-peca">'.$peca['descricao'].'</p>';
                 echo '</div>';
             }
                 

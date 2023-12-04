@@ -1,6 +1,7 @@
 <?php
 require './shared/header.php';
 ?>
+    <style>.header{position: absolute;}</style>
     <div class="container">
         <?php   
             require_once './controller/portifoliosController.php';

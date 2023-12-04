@@ -1,8 +1,9 @@
 <?php
 require './shared/header.php';
 ?>
-            
-    
-    <script src="./js/script.js"></script>
+
+    <div class="container">
+        
+    </div>
 </body>
 </html>

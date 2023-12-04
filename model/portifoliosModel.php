@@ -5,6 +5,7 @@ class portifoliosModel {
     protected $id;
     protected $nome;
     protected $imagem;
+    protected $desc;
 
 
     public function __construct() {
@@ -22,6 +23,10 @@ class portifoliosModel {
     public function getImagem() {
         return $this->imagem;
     }
+    public function getDesc() {
+        return $this->desc;
+    }
+    
 
     public function setId($id): void {
         $this->id = $id;
@@ -31,8 +36,12 @@ class portifoliosModel {
         $this->nome = $nome;
     }
 
-    public function setimagem($imagem): void {
+    public function setImagem($imagem): void {
         $this->imagem = $imagem;
+    }
+
+    public function setDesc($desc): void {
+        $this->desc = $desc;
     }
 
     public function loadAll() {
@@ -51,7 +60,7 @@ class portifoliosModel {
         $db = new ConexaoMysql();
         $db->Conectar();
         
-        $sql = 'INSERT INTO portifolios (nome, imagem, descricao) values ("'.$this->nome.'","'.$this->imagem.'","'.$this->descricao.'");';
+        $sql = 'INSERT INTO portifolios (nome, imagem, descricao) values ("'.$this->nome.'","'.$this->imagem.'","'.$this->desc.'");';
         $db->Executar($sql);
         $db->Desconectar();
 

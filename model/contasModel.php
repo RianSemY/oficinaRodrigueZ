@@ -82,24 +82,39 @@ class clientesModel{
         $db->Desconectar();
         return $result;
     }
+    public function loadById($id) {
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        $sql = 'SELECT * FROM cliente where id =' . $id;
+        $resultList = $db->Consultar($sql);
+        if ($db->total == 1) {
+            foreach ($resultList as $value) {
+                $this->id = $value['id'];
+                $this->nome = $value['nome'];
+                $this->endereco = $value['endereco'];
+                $this->senha = $value['senha'];
+                $this->fone = $value['fone'];
+                $this->email = $value['email'];
+            }
+        }
+
+        $db->Desconectar();
+
+        return $resultList;
+    }
     
     public function insert(){
-        //Criar um objeto de conexão
         $db = new ConexaoMysql();
 
-        //Abrir conexão com banco de dados
         $db->Conectar();
 
-        //Criar consulta
         $sql = 'INSERT INTO cliente values (null, "'.$this->nome.'","'.$this->senha.'","'.$this->email.'","'.$this->fone.'","'.$this->endereco.'");';
-        //Executar método de inserção
         $db->Executar($sql);
-
-
         $db->Desconectar();
 
         return $db->total;
     }
+    
     
     public function loadAll() {
         $db = new ConexaoMysql();
