@@ -60,7 +60,7 @@ class portifoliosModel {
         $db = new ConexaoMysql();
         $db->Conectar();
         
-        $sql = 'INSERT INTO portifolios (nome, imagem, descricao) values ("'.$this->nome.'","'.$this->imagem.'","'.$this->desc.'");';
+        $sql = 'INSERT INTO portifolios values (null, "'.$this->imagem.'","'.$this->nome.'","'.$this->desc.'");';
         $db->Executar($sql);
         $db->Desconectar();
 
@@ -72,7 +72,7 @@ class portifoliosModel {
         $db->Conectar();
         $sql = 'UPDATE portifolios SET '
                 . 'nome="'.$this->nome.'",'
-                . 'descricao ="'.$this->descricao.'",'
+                . 'descricao ="'.$this->desc.'",'
                 . 'imagem ="'.$this->imagem.'",'
                 . 'WHERE id = '.$this->id;
         $db->Executar($sql);

@@ -115,14 +115,16 @@ if(isset($_FILES['upload'])){
 
     
     $caminhoImagem = $pasta . $nomeArquivo . "." . $tipo;
-    $imagemEnviada = move_uploaded_file($arquivo["tmp_name"], $caminhoImagem);
+    move_uploaded_file($arquivo['tmp_name'], $caminhoImagem);
+
+    
 }
 ?>
 <body>
     <div class="darkBG">
         <div class="containerReg">
             <p>Inserir  portifólio: </p>
-            <form method="post" action="controller/portifoliosController.php">
+            <form method="post" action="controller/portifoliosController.php" enctype="multipart/form-data">
                 <span class="material-symbols-outlined">directions_car</span>
                 <labeL for="nome">Insira o nome do portifólio: </label>
                 <input type="text" name="nome" id="nome">

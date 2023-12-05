@@ -9,9 +9,12 @@ function loadAll(){
 }
 
 if ($_POST) {
-    @$imagem = $_POST['upload'];
+    @$imagem = $_FILES['upload']['name'];;
     @$nome = $_POST['nome'];
     @$desc = $_POST['descricao'];
+    echo $imagem;
+    echo $nome;
+    echo $desc;
     
     if (isset($nome) and isset($desc) and isset($imagem)) {
         require_once '../model/portifoliosModel.php';
