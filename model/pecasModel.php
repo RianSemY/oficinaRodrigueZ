@@ -78,11 +78,16 @@ class PecasModel{
         return $resultList;
     }
 
-    /*public function insert() {
+    public function deleteFromEstoque(){
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        $sql = 'DELETE FROM peca WHERE estoque<1';
+    }
+    public function insert() {
         $db = new ConexaoMysql();
         $db->Conectar();
         
-        $sql = 'INSERT INTO portifolios (nome, imagem, descricao) values ("'.$this->nome.'","'.$this->imagem.'","'.$this->desc.'");';
+        $sql = 'INSERT INTO peca values (null, "'.$this->nome.'","'.$this->tipo.'","'.$this->preco.'","'.$this->estoque.'","'.$this->desc.'","'.$this->imagem.'");';
         $db->Executar($sql);
         $db->Desconectar();
 
@@ -94,7 +99,9 @@ class PecasModel{
         $db->Conectar();
         $sql = 'UPDATE portifolios SET '
                 . 'nome="'.$this->nome.'",'
-                . 'descricao ="'.$this->descricao.'",'
+                . 'tipo="'.$this->tipo.'",'
+                . 'preco="'.$this->preco.'",'
+                . 'descricao ="'.$this->desc.'",'
                 . 'imagem ="'.$this->imagem.'",'
                 . 'WHERE id = '.$this->id;
         $db->Executar($sql);
@@ -106,7 +113,7 @@ class PecasModel{
     public function delete() {
         $db = new ConexaoMysql();
         $db->Conectar();
-        $sql = 'DELETE FROM portifolios WHERE id='.$this->id;
+        $sql = 'DELETE FROM peca WHERE id='.$this->id;
     
         $db->Executar($sql);
         $db->Desconectar();
@@ -114,5 +121,4 @@ class PecasModel{
         return $db->total;
     }
 
-    */
 }

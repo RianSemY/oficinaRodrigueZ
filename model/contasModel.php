@@ -96,13 +96,25 @@ class clientesModel{
                 $this->fone = $value['fone'];
                 $this->email = $value['email'];
             }
+            
         }
 
         $db->Desconectar();
 
         return $resultList;
     }
-    
+    public function verificarRegistro(){
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        require_once './funcionariosModel.php';
+        $sql = 'SELECT * FROM funcionario;';
+        $funcionarios = $db->Consultar($sql);
+
+        $sql = 'SELECT * FROM cliente;';
+        $cliente = $db->Consultar($sql);
+
+        $db->Desconectar();
+    }
     public function insert(){
         $db = new ConexaoMysql();
 
@@ -120,11 +132,8 @@ class clientesModel{
         $db = new ConexaoMysql();
         $db->Conectar();
         $sql = 'SELECT * FROM cliente';
-
         $resultList = $db->Consultar($sql);
-        
         $db->Desconectar();
-
         return $resultList;
     }
 }

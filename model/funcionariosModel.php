@@ -105,11 +105,17 @@ class funcionariosModel{
         $db = new ConexaoMysql();
         $db->Conectar();
         $sql = 'SELECT * FROM funcionario';
-
         $resultList = $db->Consultar($sql);
-        
+        $db->Desconectar();
+        return $resultList;
+    }
+    public function delete() {
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        $sql = 'DELETE FROM funcionario WHERE id=' . $this->id;
+        $db->Executar($sql);
         $db->Desconectar();
 
-        return $resultList;
+        return $db->total;
     }
 }

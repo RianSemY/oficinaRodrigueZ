@@ -85,7 +85,6 @@ class portifoliosModel {
         $db = new ConexaoMysql();
         $db->Conectar();
         $sql = 'DELETE FROM portifolios WHERE id='.$this->id;
-      
         $db->Executar($sql);
         $db->Desconectar();
 

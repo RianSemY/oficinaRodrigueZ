@@ -23,6 +23,27 @@ if ($_POST) {
     }else{
         header('location:../index.php?cod=172');
     }
+} 
+else if ($_REQUEST) {
+    if (isset($_REQUEST['cod']) && $_REQUEST['cod'] == 'del') {
+        require_once '../model/funcionariosModel.php';
+        $funcionario = new funcionariosModel();
+        if (isset($_REQUEST['id']) && !empty($_REQUEST['id'])) {
+            $funcionario->setId($_REQUEST['id']);
+            $total = $funcionario->delete();
+            if ($total == 1) {
+                header('location:../gerenciarPessoas.php?cod=success&&admin=admin');
+            }
+        }
+    }
 } else {
-    header('location:../index.php?cod=172');
+    loadAll();
+}
+
+function loadAllFuncionarios() {
+    require_once './model/funcionariosModel.php';
+    $funcionarios = new funcionariosModel();
+    $funcionariosList = $funcionarios->loadAll();
+
+    return $funcionariosList;
 }

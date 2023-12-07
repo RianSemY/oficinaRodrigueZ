@@ -94,6 +94,12 @@
     </style>
 </head>
 <body>
+    <?php
+    @$admin = $_REQUEST['admin'];
+    if($admin != 'admin'){
+        header('location:index.php?cod=172');
+    }
+    ?>
     <div class="darkBG">
         <div class="containerReg">
             <p>Registrar funcionário: </p>

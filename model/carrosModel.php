@@ -81,6 +81,16 @@ class carrosModel {
         $db->Desconectar();
         return $resultList;
     }
+    public function loadDono($idcliente){
+        $db = new ConexaoMysql();
+        $db->Conectar();
+        require_once 'contasModel.php';
+        
+        $sql = 'SELECT nome from cliente where id='.$idcliente;
+        $donosList = $db->Consultar($sql);
+        $db->Desconectar();
+        return $donosList;
+    }
 
     public function loadById($id) {
         $db = new ConexaoMysql();
@@ -129,7 +139,6 @@ class carrosModel {
                 . 'cor ="' . $this->cor . '",'
                 . 'ano ="' . $this->ano . '"'
                 . 'WHERE id = ' . $this->id;
-
         $db->Executar($sql);
         $db->Desconectar();
 
@@ -137,15 +146,10 @@ class carrosModel {
     }
 
     public function delete() {
-
         $db = new ConexaoMysql();
-
         $db->Conectar();
-
-        $sql = 'DELETE FROM cliente WHERE id=' . $this->id;
-
+        $sql = 'DELETE FROM carros WHERE id=' . $this->id;
         $db->Executar($sql);
-
         $db->Desconectar();
 
         return $db->total;

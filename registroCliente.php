@@ -117,7 +117,7 @@
 
                 <span class="material-symbols-outlined">call</span>
                 <label for="fone">Telefone:</label>
-                <input id="fone" name="fone" type="text"  required placeholder="Insira seu numero de telefone"/>
+                <input id="fone" name="fone" type="text"  onkeypress="formatarTelefone(event)"  required placeholder="(XX) X XXXX-XXXX"/>
 
                 <input type="submit" value="Enviar">
             </form>
@@ -137,7 +137,30 @@
             inputSenha.type = 'password';
         }
     }
+    /*function formatarTelefone(event) {
+        var telefone = document.getElementById('fone');
+        var teclaDigitada = event.key;
+        if (!/\d/.test(teclaDigitada)) {
+            event.preventDefault();
+        }
+        valor = valor.substring(0, 10);
+        var mascara = '(' + valor.substr(0, 2) + ') ' + valor.substr(2, 1) + ' ' + valor.substr(3, 4) + '-' + valor.substr(7, 4);
 
+        telefone.value = mascara;
+    }*/
+    function formatarTelefone(event) {
+        var telefone = document.getElementById('fone');
+        var teclaDigitada = event.key;
+        
+        if (!/\d/.test(teclaDigitada)) { event.preventDefault(); }
+        var valor = telefone.value.replace(/\D/g, ''); 
+
+        if (valor.length >= 11) {
+            event.preventDefault();
+            return;
+        }   
+        telefone.value = valor;
+    }
     </script>
 </body>
 </html>

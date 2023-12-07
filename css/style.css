@@ -10,12 +10,6 @@
 body, .container{
     min-height: 100vh;
 }
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center ;
-    z-index: 0;
-}
 header{
     width: 100%;
     height: 180px;
@@ -30,6 +24,11 @@ header{
 .header-not-absolute{
     width: 100%;
     height: 180px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------ NAV BAR -----------------------------------------------------------------*/
@@ -50,6 +49,7 @@ header{
     border: none;
     margin-right: 20px;
     margin-bottom: 80px;
+    
 }
 .fazerLogin:hover{
     background-color: rgb(230, 42, 42);
@@ -78,6 +78,10 @@ header{
 }
 .nav-item:hover{
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF;
+}
+.logo{
+    justify-content: center;
+    height: 120px;
 }
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------ MODAL LOGIN -----------------------------------------------------------------*/
@@ -189,24 +193,25 @@ label{
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------ MAIN-CATÁLOGO -----------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------*/
-
+.containerCat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+    width: 900px;
+    height: 100vh;
+    z-index: 0;
+}
 .pecas-container{
     height: 420px;
-    display: flex;
     flex-direction: column;
     position: relative;
     width: 250px;
     margin: 15px;
     border-radius: 5px;
     background-color: rgb(224, 224, 224);
-    box-shadow: 0px 0px 0px 1px rgba(85, 85, 85, 0.92);
     transition: 0.3s ease-in-out;
 }
-.pecas-container:hover{
-    box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
-    -webkit-box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
-    -moz-box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);
-}
+.pecas-container:hover{box-shadow: 1px 13px 43px 1px rgba(85, 85, 85, 0.92);}
 .shadow-box{
     width: 250px;
     height: 420px;
@@ -214,10 +219,8 @@ label{
     z-index: 1;
     transition: box-shadow 0.3s ease-in-out;
 }
-.shadow-box:hover{
-    box-shadow: 0px 0px 104px -1px rgba(0,0,0,0.53) inset;
-}
-.name-peca{
+.shadow-box:hover{box-shadow: 0px 0px 104px -1px rgba(0,0,0,0.53) inset;}
+.pecas-container h2{
     margin: 10px;
     font-size:18px;
     text-align: center;
@@ -226,10 +229,10 @@ label{
     border-bottom: 1px dashed rgb(0, 0, 0);
     padding: 4px 0px 4px;
 }
-.preco-peca{
+.pecas-container h3{
     margin: auto;
     margin-top: 0;
-    
+    text-align: center;
     margin-bottom: 10px;
 }
 .img-container{
@@ -237,23 +240,134 @@ label{
     height: 190px;
     display: flex;
     justify-content: center;
-    z-index: 0;
 }
-.image-peca{
-    width: 200px;
+.pecas-container img{
+    width: 90%;
+    height: auto;
     position: relative;
 }
-.desc-peca{
+.pecas-container p{
     text-align-last: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-}
-.logo{
-    justify-content: center;
-    height: 120px;
+    margin: 0px 10px 0px;
 }
 
+.addMarket{
+    position: absolute;
+    background-color: red;
+    z-index: 1;
+    padding: 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    right: 0;
+    color: white;
+    transition: .3s;
+    border: none;
+}   
+.addMarket:hover{
+    cursor: pointer;
+    background-color: white;
+    color: red;
+}
+
+.pecas-container span{font-size: 20px;}
+.pecas-container a{
+    height: 35px;
+    width: 35px;
+    color: white;
+    position: absolute;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    right: 0;
+    text-decoration: none;
+    transition: .3s;
+    z-index: 1;
+}
+#carrinho{
+    height: 600px;
+    width: 400px;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    position: fixed;
+    z-index: 2;
+    background-color: #27282c;
+    margin-right: 30px;
+    top: 0;
+    margin-top: 200px;
+    transition: .5s;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.headerCarrinho{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.itemCarrinho{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(224, 224, 224);
+    margin: 10px;
+    justify-content: space-between;
+}
+.carrinhoImg{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+}
+.carrinhoImg img{
+    width: 97%;
+    height: 97%;
+    object-fit: center;
+    object-position: center;
+}
+.footerCarrinho{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    border-top: 2px solid white;
+}
+#carrinho button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#carrinho button:hover{
+    cursor: pointer;
+    color:rgb(172, 0, 0);
+}
+.carrinhoVazio{
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+}
+#carrinho p{
+    font-size: 15px;
+    width: 120px;
+}
+.itemCarrinho h2{
+    font-size: 20px;
+    width: 110px;
+}
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------------- Portifólios --------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------*/
@@ -265,8 +379,11 @@ label{
     margin-top: 100px;
     border-radius: 5px;
     transition: .2s;
-    flex-direction: column;
     margin: 25px 50px 50px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 .container-port h1{
     margin-top: 20px;
@@ -277,7 +394,7 @@ label{
 }
 .container-port p{
     margin: 20px 50px 50px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: justify;
     text-align-last: center;
 }
@@ -285,6 +402,38 @@ label{
 .container-port img{
     width: 700px;
     height: 500px;
+}
+.container-port a{
+    height: 35px;
+    width: 35px;
+    color: white;
+    position: absolute;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    right: 0;
+    text-decoration: none;
+    transition: .3s;
+}
+.edit{
+    background-color: goldenrod;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.edit:hover{
+    background-color: white;
+    color: goldenrod;
+}
+.delete{
+    background-color: red;
+    margin-top: 50px;
+    margin-right: 5px;
+}
+.delete:hover{
+    background-color: white;
+    color: red;
 }
 
 /*-----------------------------------------------------------------------------------------------------------------*/
@@ -296,6 +445,7 @@ label{
     height: 100%;
     display: flex;
     justify-content: center;
+
 }
 .container-regcarro form{
     display: flex;
@@ -368,6 +518,44 @@ label{
 
 #remover{color: rgb(194, 2, 2);}
 #remover:hover{background-color: rgb(194, 2, 2); color:white;}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------- Gerenciar tudo --------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+
+table{
+    border-collapse: collapse;
+    width: 800px;
+    text-align: center;
+    text-transform: capitalize;
+}
+table tr{
+    height: 40px;
+}
+table tr:nth-child(even){
+    background-color: gray;
+}
+table tr:nth-child(odd){
+    background-color: darkgray;
+}
+th{
+    width: 800px;
+    background-color: #27282c;
+    color: white;
+}       
+table a{
+    color: black;
+    cursor: pointer;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    height: 25px;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0;
+    border-radius: 5px;
+}
 /*-----------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------ CELULAR -----------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------------------------------------------*/

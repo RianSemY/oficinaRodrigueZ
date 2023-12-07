@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar - Oficina Rodriguez</title>
+    <title>Registrar peças - Oficina Rodriguez</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
         *{
@@ -22,7 +22,7 @@
         }
         body div{
             background-color: white;
-            width: 600px;
+            width: 700px;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -40,13 +40,19 @@
             font-size: 15px;
             margin-bottom: 20px;
         }
+        textarea{
+            padding: 0;
+            padding-left: 35px;  
+        }
 
-        input[type="text"], textarea{
+        input[type="text"], textarea, input[type="number"]{
             border-bottom: solid gray 3px; 
+            
             transition: .3s;
         }
         textarea:focus,
-        input[type="text"]:focus{
+        input[type="text"]:focus,
+        input[type="number"]:focus{
             border-bottom: solid red 3px; 
         }
         input[type="file"]{
@@ -81,9 +87,10 @@
         }
         .material-symbols-outlined{
             position: absolute;
-            margin-top: 31px;
-            margin-left: 3px;
             pointer-events: none;
+            margin-top: 25px;
+            margin-right: 223px;
+            font-size: 21px;
         }
         p{
             margin-top: 40px;
@@ -103,9 +110,11 @@
         #desc{
             word-wrap: break-word;
             padding-top: 15px;
+            border-radius: 5px;
         }
         #desc:focus{
             height: 150px;
+            background-color: #f7f5f5;
         }
         #upload{
             padding-left: 30px;
@@ -124,7 +133,7 @@
             border-radius: 5px;
             margin-bottom: 50px;;
         }
-        .backBtn{
+        a{
             text-decoration: none;
             color: black;
             font-size: 35px;
@@ -140,12 +149,37 @@
             margin-right: 500px;
             margin-top: 10px;
         }
-        .backBtn:hover{
+        a:hover{
             border: none;
             color: white;
             background-color: black;
         }
-        
+        .formControl{
+            width: 300px;
+            height: 75px;
+        }
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        label{
+                margin-bottom: 10px;
+                display: flex;
+            }
+        #upload{
+            display:flex;
+            justify-content: center;
+            width: 400px;
+        }
+        #desc{
+            width: 300px;
+            margin-top: 50px;
+        }
+        #Ldesc{
+            margin-top: 70px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 
@@ -153,35 +187,51 @@
     <div class="darkBG">
         <div class="containerReg">
             <?php
-            @$admin = $_REQUEST['admin'];
-            if(!isset($admin) || $admin != 'admin'){
-                header('location: portifolios.php');   
-            }
             @$cod = $_REQUEST['cod'];
             if (isset($cod)){
                 if($cod == 'error'){
-                    echo '<p class="error">Erro ao enviar portifólio</p>';
+                    echo '<p class="error">Erro ao enviar peça</p>';
                 } else if($cod == 'sucess'){
-                    echo '<p class="sucess">Portifólio enviado com sucesso</p>';
+                    echo '<p class="sucess">Peça enviada com sucesso</p>';
                 } else if($cod == 'edit'){
-                    require_once 'controller/portifoliosController.php';
+                    require_once 'controller/pecasController.php';       
                 }
             }
+            
             ?>
-            <a class="backBtn" href="portifolios.php?admin=admin">🠔</a>
-            <p>Inserir  portifólio: </p>
-            <form method="post" action="controller/portifoliosController.php" enctype="multipart/form-data">
-                <span class="material-symbols-outlined">directions_car</span>
-                <labeL for="nome">Nome do portifólio: </label>
-                <input type="text" name="nome" id="nome" required placeholder="Insira o nome do portifólio">
-                
-                <span class="material-symbols-outlined">description</span>
-                <labeL for="nome">Descrição do portifólio: </label>
-                <textarea spellcheck="false" name="descricao" id="desc" required placeholder="Insira a descrição do portifólio"></textarea>
+            <a href="portifolios.php">🠔</a>
+            <p>Inserir  peça: </p>
+            <form method="post" action="controller/pecasController.php" enctype="multipart/form-data">
+                <div class="formControl">
+                    <span class="material-symbols-outlined">badge</span>
+                    <labeL for="nome">Nome da peça: </label>
+                    <input type="text" name="nome" id="nome" value="" value="" required placeholder="Insira o nome da peça">
+                </div>
 
-                <span class="material-symbols-outlined">upload_file</span>
-                <input type="file" id="upload" name="upload" required accept=".jpg, .jpeg, .png">
-                <input type="submit" value="Enviar">
+                <div class="formControl">
+                    <span class="material-symbols-outlined">format_list_bulleted</span>
+                    <labeL for="tipo">Tipo da peça: </label>
+                    <input type="text" name="tipo" id="tipo" value="" required placeholder="Insira o tipo da peça">
+                </div>
+
+                <div class="formControl">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <labeL for="estoque">Número de estoque da peça: </label>
+                    <input type="number" name="estoque" id="estoque" value="" required placeholder="Insira o número de estoque da peça">
+                </div>
+
+                <div class="formControl">
+                    <span class="material-symbols-outlined">credit_card</span>
+                    <labeL for="preco">Preco da peça: </label>
+                    <input type="text" name="preco" id="preco" value="" required placeholder="Insira o preco da peça">
+                </div>
+                
+                <labeL id="Ldesc" for="descricao">Descrição da peça: </label>
+                <textarea spellcheck="false" name="descricao" id="desc" value="" required placeholder="Insira a descrição da peça"></textarea>
+                
+                <input type="file" id="upload" name="upload" value="" required accept=".jpg, .jpeg, .png">
+                
+            <input type="submit" value="Enviar">
             </form>
         </div>
     </div>

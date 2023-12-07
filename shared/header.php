@@ -40,6 +40,7 @@
 
                     <?php
                     @$cod = $_REQUEST['cod'];
+                    @$admin = $_REQUEST['admin'];
                     if (isset($cod)) {
                         if ($cod == '171') {
                             echo ('<br><div class="incorrect">');
@@ -55,7 +56,9 @@
                         else if ($cod == '170') {
                             echo ('<script>loginEfetuado();</script>');
                         }
-
+                    }
+                    if (isset($admin) && $admin == 'admin' ){
+                        echo ('<script>loginEfetuado();</script>');
                     }
                     ?>
                 </div>
@@ -69,15 +72,22 @@
 
             <button class="fazerLogin" onclick="abrirModal()">ENTRAR</button>
             <div class="nav-bar">
-                <a href="./index.php?cod=<?php echo $cod?>" class="nav-item">PÁGINA INICIAL</a>
-                <a href="./portifolios.php?cod=<?php echo $cod?>" class="nav-item">PORTIFÓLIOS</a>
-                <a href="./servicos.php?cod=<?php echo $cod?>" class="nav-item">SERVIÇOS</a>
+                <a href="./index.php?<?php if(isset($cod)){echo "cod=$cod";} if($admin == 'admin'){echo '&&admin=admin';}?>" class="nav-item">PÁGINA INICIAL</a>
+                <a href="./portifolios.php?<?php if(isset($cod)){echo "cod=$cod";} if($admin == 'admin'){echo '&&admin=admin';}?>" class="nav-item">PORTIFÓLIOS</a>
+                <a href="./servicos.php?<?php if(isset($cod)){echo "cod=$cod";} if($admin == 'admin'){echo '&&admin=admin';}?>" class="nav-item">SERVIÇOS</a>
                 <?php
-                if ($cod == '170')
-                    echo "<a href='./registrarCarro.php?cod=$cod' class='nav-item'>MEU CARRO</a>";
-                ?>
-                <a href="#" class="nav-item">FALE CONOSCO</a>
-                <a href="#" class="nav-item">ABOUT US</a>
+                if ($cod == '170' && $admin == 'admin'){
+                    echo "<a href='./registrarCarro.php?cod=$cod&&admin=admin' class='nav-item'>MEU CARRO</a>";                    
+                }else if($cod == '170'){
+                    echo "<a href='./registrarCarro.php?cod=$cod' class='nav-item'>MEU CARRO</a>";                    
+                }
+                if($admin != 'admin'){
+                    echo '<a href="#" class="nav-item">FALE CONOSCO</a>';
+                    echo '<a href="#" class="nav-item">ABOUT US</a>';
+                } else{
+                    echo '<a href="gerenciarPessoas.php?admin=admin" class="nav-item">GERENCIAR PESSOAS</a>';
+                }
+                    ?>
             </div>
         </header>
         <div class="header-not-absolute"></div>
